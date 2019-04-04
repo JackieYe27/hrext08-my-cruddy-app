@@ -1,63 +1,89 @@
 /*
 - [ ] UI/UX considerations (how are we going to use this)
 
-nice contrasting color pallet
-a form that doenst look like its from a circa 2001 webpage
-
-
-advanced content
-state changing styling
 */
 
-/*
-	FLEXBOX CONTAINER
-	guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-*/
-.container {
-	display: flex;
+.done {
+	color: brown;
+	text-decoration: line-through;
 }
 
-/*
-	TABLE STYLING 
-*/
-table {
-	width: 400px;
-	margin-left: 30px;
+
+#container {
+	width: 360px;
+	max-height: 500px;
+	margin: 200px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-table,
-td {
-    border: 1px solid #333;
+body {
+	background-image: url(https://www.authenticbape.com/images/bape-wallpapers/spongebob-and-baby-milo.jpg)
 }
 
-thead,
-tfoot {
-    background-color: #333;
-    color: #fff;
+h1 {
+	text-align: center;
+	background:#ffe135;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	font-weight: normal;
+	font-size: 25px;
+	margin: 0;
 }
 
-/*
-	FORM STYLING 
-	TODO: validation checking styling 
-*/
-form.form {
+input {
+	background:	#D2B48C;
+	width: 100%;
+	padding: 13px 13px 13px 20px;
+	box-sizing: border-box;
+	border: 3px solid rgba(0, 0, 0, 0);
+	color: #8B4513;
+	font-size: 20px;
 }
 
-div.form {
+input: focus {
+	border: 3px solid #D2B48C;
+	outline: none;
 }
 
-label, input {
-    margin-bottom: 10px;
-    width: 125px;
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-label {
+li {
+	background: #FFE4C4;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+li:nth-child(2n) {
+	background: #F5DEB3;
+}
+
+#tasks {
+	max-height: 400px;
+	overflow: auto;
+}
+
+.delete {
+	background: #8B4513;
+	height: 40px;
+	text-align: center;
+	width: 0px;
+	float: left;
 	display: inline-block;
-    padding-right: 10px;
-    width: 80px;
+	transition: 0.5s linear;
 
 }
 
-button.button {
-	margin-right: 20px;
+li:hover span {
+	width: 40px
+
+}
+
+#plus {
+	float: right;
+	margin-right: 0: 
 }
