@@ -3,7 +3,8 @@ var input = document.getElementById('text')
 
 // creating the items array after every entry
 
-let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+
 
 localStorage.setItem('items', JSON.stringify(itemsArray))
 var data = JSON.parse(localStorage.getItem('items'))
@@ -52,6 +53,13 @@ $("ul").on("click", "span", function(event) {
 });
 
 
+// emojis array to be added
+
+var monkeys = ['<i class="fas fa-grin-beam"></i>', '<i class="fas fa-angry"></i>', '<i class="fas fa-kiss-beam"></i>', '<i class="fas fa-flushed"></i>', '<i class="fas fa-grin-hearts"></i>']
+var monkeyChooser = function() {
+	return monkeys[Math.floor(Math.random() * monkeys.length)];
+}
+
 // add
 
 $("input").keypress(function(event){
@@ -65,8 +73,8 @@ $("input").keypress(function(event){
   		localStorage.setItem('items', JSON.stringify(itemsArray))
   		// liMaker(task)
   		task = ''
- 
-
+  		$('h2').append(monkeyChooser())
+  		localStorage.setItem('emoji', monkeyChooser());
 }
 
 });
@@ -75,8 +83,14 @@ $("input").keypress(function(event){
 
 data.forEach(item => {
   var task = $("input").val();
-    $("ul").append("<li><span class='delete'><i class='fas fa-angry'></i></span>"+ item + "</li>")	
+    $("ul").append("<li><span class='delete'><i class='fas fa-angry'></i></span>"+ item + "</li>");	
   // liMaker(item)
+})
+
+// making emojis show
+
+data.forEach(item => {
+	$('h2').append(monkeyChooser());
 })
 
 
@@ -89,3 +103,8 @@ $("#plus").on("click", function() {
 
 });
 
+
+
+var removeEntry = function(key) {
+	return localStorage.removeItem(key);
+}
