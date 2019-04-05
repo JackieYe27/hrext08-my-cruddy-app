@@ -87,3 +87,8 @@ li:hover span {
 	float: right;
 	margin-right: 0: 
 }
+
+li { 
+	cursor: pointer; 
+}
+
